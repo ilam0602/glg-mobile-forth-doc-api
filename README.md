@@ -33,28 +33,21 @@ pip install -r requirements.txt
 
 ### 4. Environment Variables
 
-Create a `.env` file in the root directory and add the following environment variables:
+
 
 ```
-FIREBASE_SERVICE_ACCOUNT_KEY=<Your Firebase Service Account Key JSON>
-FORTH_API_KEY=<Your Forth API Key JSON>
-```
-
-**Example:**
-
-```json
-# .env
-FIREBASE_SERVICE_ACCOUNT_KEY='{"type": "service_account", "project_id": "...", ...}'
-FORTH_API_KEY='{"client_id": "...", "client_secret": "..."}'
+Fill in .env.Sample and rename to .env
 ```
 
 ## Running the Application
 
-```sh
-flask run
 ```
 
+flask run
+
 The application will be available at `http://127.0.0.1:5000/`.
+
+```
 
 ## API Endpoints
 
@@ -79,14 +72,9 @@ The application will be available at `http://127.0.0.1:5000/`.
 
 **Response:**
 
-```json
-{
-    "status": "...",
-    "response": {
-        ...
-    }
-}
-```
+See documentation: 
+https://debtpaypro.stoplight.io/docs/dpp-api/4121bcce11e74-upload-document-to-contact-dashboard
+
 
 ### 2. Get Document
 
@@ -108,20 +96,15 @@ The application will be available at `http://127.0.0.1:5000/`.
 
 **Response:**
 
-```json
-{
-    "status": "...",
-    "response": {
-        ...
-    }
-}
-```
+See Documentation:
+https://debtpaypro.stoplight.io/docs/dpp-api/9ab6480764e77-get-document-by-id
+
 
 ## File Structure
 
 ```
 .
-├── app.py
+├── forth_apiX.X.X.py
 ├── requirements.txt
 ├── .env
 └── README.md

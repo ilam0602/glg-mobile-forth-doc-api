@@ -73,7 +73,7 @@ def uploadDoc(contact_id, file_name, file_content):
     )
     return response.json()
 
-# New function to get document by ID
+# Function to get document by ID
 def getDoc(contact_id, doc_id):
     api_key = forthCRM_authtoken()
 
