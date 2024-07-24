@@ -104,7 +104,7 @@ https://debtpaypro.stoplight.io/docs/dpp-api/9ab6480764e77-get-document-by-id
 
 ```
 .
-├── forth_apiX.X.X.py
+├── forth_api.py
 ├── requirements.txt
 ├── .env
 └── README.md
