@@ -3,5 +3,3 @@ venv/
 
 #environtment vars
 .env
-
-past_builds/
