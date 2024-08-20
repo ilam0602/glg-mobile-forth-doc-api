@@ -73,7 +73,7 @@ def uploadDoc(contact_id, file_name, file_content):
     )
     return response.json()
 
-# Function to get document by ID
+# New function to get document by ID
 def getDoc(contact_id, doc_id):
     api_key = forthCRM_authtoken()
 
@@ -151,7 +151,7 @@ def get_document():
 
     uid = decoded_token.get('uid')
     if not check_user_contact(uid, contact_id):
-        return jsonify({"error": "Contact ID does not match user"}), 403
+        return jsonify({"error": f"Contact ID does not match user {uid} {contact_id}"}), 403
 
     #TODO REMOVE HARD CODE
     # result = getDoc(contact_id, file_id)
@@ -159,4 +159,4 @@ def get_document():
     return jsonify(result)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host = '0.0.0.0',port=8080)
