@@ -99,15 +99,19 @@ def verify_firebase_token(token):
 # Function to check user and contact id in Firestore
 def check_user_contact(uid, contact_id):
     try:
-        users_ref = db.collection('users')
-        query = users_ref.where('uid', '==', uid).stream()
-        for user in query:
-            user_data = user.to_dict()
-            if user_data.get('contact_id') == contact_id:
+        
+        user_doc = db.collection('users_test').document(uid).get()
+        
+        if user_doc.exists:
+            if user_doc.get('contact_id') == contact_id:
                 return True
+        
         return False
+        
     except Exception as e:
+        print(f"Error: {e}")
         return False
+
 
 # Flask route to handle POST request for document upload
 @app.route('/upload', methods=['POST'])
